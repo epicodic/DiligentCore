@@ -211,7 +211,7 @@ GLObjectWrappers::GLPipelineObj& PipelineStateGLImpl::GetGLProgramPipeline(GLCon
     }
 
     // Create new progam pipeline
-    m_GLProgPipelines.emplace_back(Context, true);
+    m_GLProgPipelines.emplace_back(Context, GLObjectWrappers::GLObjWrapper<GLObjectWrappers::GLPipelineObjCreateReleaseHelper>(true));
     auto&  ctx_pipeline = m_GLProgPipelines.back();
     GLuint Pipeline     = ctx_pipeline.second;
     for (Uint32 i = 0; i < m_NumShaders; ++i)

@@ -253,10 +253,10 @@ protected:
     void OnFreeAllocation(VkDeviceSize Size, bool IsHostVisble);
 
     // 0 == Device local, 1 == Host-visible
-    std::array<std::atomic_int64_t, 2> m_CurrUsedSize      = {};
-    std::array<VkDeviceSize, 2>        m_PeakUsedSize      = {};
-    std::array<VkDeviceSize, 2>        m_CurrAllocatedSize = {};
-    std::array<VkDeviceSize, 2>        m_PeakAllocatedSize = {};
+    std::array<std::atomic<std::int64_t>, 2> m_CurrUsedSize      = {};
+    std::array<VkDeviceSize, 2>              m_PeakUsedSize      = {};
+    std::array<VkDeviceSize, 2>              m_CurrAllocatedSize = {};
+    std::array<VkDeviceSize, 2>              m_PeakAllocatedSize = {};
 
     // If adding new member, do not forget to update move ctor
 };

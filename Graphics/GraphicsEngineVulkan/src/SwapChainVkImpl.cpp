@@ -227,7 +227,7 @@ void SwapChainVkImpl::CreateVulkanSwapChain()
     m_SwapChainDesc.Height = swapchainExtent.height;
 
     // Mailbox is the lowest latency non-tearing presentation mode.
-    VkPresentModeKHR swapchainPresentMode = m_VSyncEnabled ? VK_PRESENT_MODE_FIFO_KHR : VK_PRESENT_MODE_MAILBOX_KHR;
+    VkPresentModeKHR swapchainPresentMode = m_VSyncEnabled ? VK_PRESENT_MODE_FIFO_KHR : VK_PRESENT_MODE_IMMEDIATE_KHR;
 
     bool PresentModeSupported = std::find(presentModes.begin(), presentModes.end(), swapchainPresentMode) != presentModes.end();
     if (!PresentModeSupported)

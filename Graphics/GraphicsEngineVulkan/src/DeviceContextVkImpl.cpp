@@ -1997,7 +1997,7 @@ void DeviceContextVkImpl::ExecuteCommandList(class ICommandList* pCommandList)
 void DeviceContextVkImpl::SignalFence(IFence* pFence, Uint64 Value)
 {
     VERIFY(!m_bIsDeferred, "Fence can only be signaled from immediate context");
-    m_PendingFences.emplace_back(std::make_pair(Value, pFence));
+    m_PendingFences.emplace_back(std::make_pair(Value, Diligent::RefCntAutoPtr<Diligent::IFence>(pFence)));
 }
 
 void DeviceContextVkImpl::WaitForFence(IFence* pFence, Uint64 Value, bool FlushContext)
