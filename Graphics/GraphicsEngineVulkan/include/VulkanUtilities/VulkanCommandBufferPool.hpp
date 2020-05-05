@@ -30,7 +30,7 @@
 #include <deque>
 #include <memory>
 #include <mutex>
-#include <atomic>
+#include <Atomics.hpp>
 #include "vulkan.h"
 #include "VulkanLogicalDevice.hpp"
 #include "VulkanObjectWrappers.hpp"

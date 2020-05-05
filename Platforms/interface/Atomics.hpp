@@ -41,3 +41,10 @@ using Atomics = WindowsAtomics;
 using Atomics = BasicAtomics;
 
 #endif
+
+#if __GLIBCXX__ <= 20160609
+namespace std
+{
+using atomic_int32_t = atomic<int32_t>;
+}
+#endif
