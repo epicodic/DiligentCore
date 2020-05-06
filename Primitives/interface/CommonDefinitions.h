@@ -105,3 +105,7 @@
 #else
 #    define DILIGENT_CPP_INTERFACE 1
 #endif
+
+#ifndef DILIGENT_STRINGIFY
+#    define DILIGENT_STRINGIFY(x) #    x
+#endif
