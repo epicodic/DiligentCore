@@ -30,7 +30,7 @@
 #include <mutex>
 #include <array>
 #include <unordered_map>
-#include <atomic>
+#include <Atomics.hpp>
 #include <string>
 #include "MemoryAllocator.h"
 #include "VariableSizeAllocationsManager.hpp"

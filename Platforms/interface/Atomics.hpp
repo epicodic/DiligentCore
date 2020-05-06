@@ -46,5 +46,6 @@ using Atomics = BasicAtomics;
 namespace std
 {
 using atomic_int32_t = atomic<int32_t>;
-}
+using atomic_int64_t = atomic<int64_t>;
+} // namespace std
 #endif
