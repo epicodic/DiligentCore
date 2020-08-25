@@ -47,9 +47,18 @@ String BuildGLSLSourceString(const ShaderCreateInfo& CreationAttribs,
     auto ShaderType = CreationAttribs.Desc.ShaderType;
 
 #if PLATFORM_WIN32 || PLATFORM_LINUX
+    if (deviceCaps.MajorVersion >= 4 && deviceCaps.MinorVersion >= 3)
+        GLSLSource.append(
+            "#version 430 core\n");
+    else
+        GLSLSource.append(
+            "#version 330 core\n"
+            "#extension GL_ARB_explicit_uniform_location : require\n"
+            "#extension GL_ARB_separate_shader_objects : require\n");
+
     GLSLSource.append(
-        "#version 430 core\n"
         "#define DESKTOP_GL 1\n");
+
 #    if PLATFORM_WIN32
     GLSLSource.append("#define PLATFORM_WIN32 1\n");
 #    elif PLATFORM_LINUX
