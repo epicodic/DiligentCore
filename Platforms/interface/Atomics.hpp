@@ -42,7 +42,7 @@ using Atomics = BasicAtomics;
 
 #endif
 
-#if __GLIBCXX__ <= 20160609
+#if __GLIBCXX__ < 20170420
 namespace std
 {
 using atomic_int32_t = atomic<int32_t>;
